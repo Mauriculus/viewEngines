@@ -1,0 +1,53 @@
+```ejs
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Carrinho de Jujubas de Tripa</title>
+
+<style>
+body{
+    background:pink;
+    font-family:Comic Sans MS;
+}
+
+.caixa{
+    width:400px;
+    margin:auto;
+    background:white;
+    border:3px solid black;
+    padding:20px;
+}
+
+h1{
+    color:red;
+    text-align:center;
+}
+</style>
+
+</head>
+<body>
+
+<div class="caixa">
+
+<h1>Carrinho 🐷🍬</h1>
+
+<p><b>Produto 1:</b> <%= produto1 %></p>
+<p>Preço: R$ <%= preco1 %></p>
+
+<hr>
+
+<p><b>Produto 2:</b> <%= produto2 %></p>
+<p>Preço: R$ <%= preco2 %></p>
+
+<hr>
+
+<h2>Total: R$ <%= total %></h2>
+
+<a href="/produtos">Voltar pra loja</a>
+
+</div>
+
+</body>
+</html>
+```

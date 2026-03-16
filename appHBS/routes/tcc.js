@@ -3,12 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('produtos');
+  res.render('tcc');
 });
 
-router.get('/carrinho', function(req, res, next) {
-  res.render('carrinho');
+router.get('/aula', function(req, res, next) {
+  res.render('aula');
 });
-
 
 module.exports = router;
