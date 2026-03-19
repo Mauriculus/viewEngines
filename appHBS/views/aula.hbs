@@ -1,95 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Painel do Professor - Enviar Aula</title>
+  <meta charset="UTF-8">
+  <title>aulas estranhas</title>
+  <style>
+    body {
+      background-color: #6484ec;
+      font-family: Comic Sans MS;
+    }
 
-    <style>
-        body{
-            background:#bfbfbf;
-            font-family: Arial;
-        }
+    h1 {
+      color: green;
+      text-align: center;
+    }
 
-        .caixa{
-            width:600px;
-            margin:auto;
-            background:#e6e6e6;
-            border:4px ridge black;
-            padding:20px;
-        }
+    table {
+      width: 80%;
+      margin: auto;
+      background-color: yellow;
+      border: 5px solid red;
+      border-collapse: collapse; /* 🔥 ESSENCIAL */
+    }
 
-        h1{
-            text-align:center;
-            color:darkblue;
-        }
+    th, td {
+      border: 2px solid black; /* 🔥 coloca linha em tudo */
+      padding: 10px;
+      text-align: center;
+    }
 
-        label{
-            font-weight:bold;
-        }
-
-        input, textarea{
-            width:100%;
-            margin-bottom:10px;
-            border:2px solid black;
-        }
-
-        button{
-            background:green;
-            color:white;
-            border:3px outset black;
-            padding:10px;
-            cursor:pointer;
-        }
-
-        .voltar{
-            background:red;
-        }
-
-        .msg{
-            background:yellow;
-            padding:10px;
-            margin-bottom:10px;
-            border:2px dashed black;
-        }
-    </style>
+    th {
+      background-color: cyan;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="caixa">
+  <h1>aulas de autonomia doméstica boa</h1>
 
-    <h1>Enviar Aula</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Autor</th>
+    </tr>
 
-    {{#if mensagem}}
-        <div class="msg">
-            {{mensagem}}
-        </div>
-    {{/if}}
+    {{#each aulas}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{titulo}}</td>
+      <td>{{autor}}</td>
+    </tr>
+    {{/each}}
 
-    <form action="/aulas/enviar" method="POST" enctype="multipart/form-data">
-
-        <label>Título da Aula</label>
-        <input type="text" name="titulo" placeholder="Digite o título da aula" required>
-
-        <label>Descrição</label>
-        <textarea name="descricao" rows="5" placeholder="Descrição da aula"></textarea>
-
-        <label>Link do Vídeo (YouTube ou outro)</label>
-        <input type="text" name="video">
-
-        <label>Arquivo da Aula (PDF, slides, etc)</label>
-        <input type="file" name="arquivo">
-
-        <br><br>
-
-        <button type="submit">Enviar Aula</button>
-        <a href="/tcc">
-            <button type="button" class="voltar">Voltar</button>
-        </a>
-
-    </form>
-
-</div>
+  </table>
 
 </body>
 </html>

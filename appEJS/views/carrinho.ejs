@@ -1,53 +1,64 @@
-```ejs
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Carrinho de Jujubas de Tripa</title>
+  <meta charset="UTF-8">
+  <title>loja de jujubas raras</title>
 
-<style>
-body{
-    background:pink;
-    font-family:Comic Sans MS;
-}
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: Comic Sans MS;
+    }
 
-.caixa{
-    width:400px;
-    margin:auto;
-    background:white;
-    border:3px solid black;
-    padding:20px;
-}
+    h1 {
+      text-align: center;
+      color: purple;
+    }
 
-h1{
-    color:red;
-    text-align:center;
-}
-</style>
+    table {
+      width: 80%;
+      margin: auto;
+      border: 5px dotted green;
+      border-collapse: collapse;
+      background-color: pink;
+    }
 
+    th, td {
+      border: 2px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: yellow;
+    }
+
+    tr:hover {
+      background-color: orange;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="caixa">
+  <h1>🍬 loja de jujubas raras 🍬</h1>
 
-<h1>Carrinho 🐷🍬</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Produto</th>
+      <th>Preço</th>
+    </tr>
 
-<p><b>Produto 1:</b> <%= produto1 %></p>
-<p>Preço: R$ <%= preco1 %></p>
+    <% jujubas.forEach(function(item) { %>
+      <tr>
+        <td><%= item.id %></td>
+        <td><%= item.produto %></td>
+        <td>RS$ <%= item.preco %></td>
+      </tr>
+    <% }); %>
 
-<hr>
-
-<p><b>Produto 2:</b> <%= produto2 %></p>
-<p>Preço: R$ <%= preco2 %></p>
-
-<hr>
-
-<h2>Total: R$ <%= total %></h2>
-
-<a href="/produtos">Voltar pra loja</a>
-
-</div>
+  </table>
 
 </body>
 </html>
-```

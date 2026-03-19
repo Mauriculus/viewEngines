@@ -59,33 +59,21 @@ html
             th Ação
 
         tbody
-          tr
-            td Placa de vídeo usada suspeita
-            td R$ 399
-            td
-              input(type="number" value="1" min="1")
-            td
-              button remover
-
-          tr
-            td CPU que esquenta muito
-            td R$ 250
-            td
-              input(type="number" value="2" min="1")
-            td
-              button remover
-
-          tr
-            td HD barulhento 500GB
-            td R$ 80
-            td
-              input(type="number" value="1" min="1")
-            td
-              button remover
+          - let total = 0
+          each item in produtos
+            - total += item.preco
+            tr
+              td= item.nome
+              td R$ #{item.preco}
+              td
+                input(type="number", value="1", min="1")
+              td
+                button(data-id=item.id) remover
 
       .total
-        | Total: R$ 979
+        | Total: R$ #{total}
 
       br
       button finalizar compra
-      button voltar pra loja
+      a(href="/produtos")
+        button voltar pra loja
